@@ -145,13 +145,14 @@
 
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 22px;
             text-decoration: none;
             color: #334155;
             transition: all 0.3s ease;
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
+            overflow: hidden;
         }
 
         .contact-item:hover {
@@ -174,6 +175,20 @@
             border: 1px solid #bae6fd;
         }
 
+        .contact-text-container {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .contact-link-text {
+            word-break: break-all;
+            overflow-wrap: break-word;
+            display: block;
+            direction: ltr;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
         /* تنسيق قسم التعليقات */
         .comments-section {
             background: white;
@@ -189,6 +204,7 @@
             padding: 15px 20px;
             margin-bottom: 15px;
             border-right: 4px solid var(--primary-blue);
+            word-break: break-word;
         }
 
         footer {
@@ -288,7 +304,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">نظام حجز المطاعم</h5>
                             <p class="card-text text-muted">تصميم نماذج ومخططات هندسية متكاملة (Use Case, ERD, DFD) لنظام إدارة وحجز المطاعم.</p>
-                            <div>
+                            <div class="mt-auto">
                                 <span class="badge bg-info text-dark mb-0">System Analysis</span>
                             </div>
                         </div>
@@ -302,7 +318,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">مشروع حجز تذاكر السينما</h5>
                             <p class="card-text text-muted">مشروع أكاديمي متكامل لتنظيم وعرض مواعيد وحجز تذاكر الأفلام عبر واجهة مستخدم مبسطة.</p>
-                            <div>
+                            <div class="mt-auto">
                                 <span class="badge bg-info text-dark mb-0">Information Systems</span>
                             </div>
                         </div>
@@ -316,7 +332,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">متجر إلكتروني للأجهزة</h5>
                             <p class="card-text text-muted">تطوير موقع إلكتروني متعدد الصفحات لشركة إلكترونيات ولابتوبات باستخدام HTML و CSS وتصميم احترافي.</p>
-                            <div>
+                            <div class="mt-auto">
                                 <span class="badge bg-info text-dark mb-0">HTML & CSS</span>
                             </div>
                         </div>
@@ -340,9 +356,9 @@
                             <div class="contact-icon">
                                 <i class="fa-solid fa-phone animated-icon"></i>
                             </div>
-                            <div>
+                            <div class="contact-text-container">
                                 <h6 class="mb-1 fw-bold text-dark">رقم الهاتف</h6>
-                                <p class="mb-0 text-muted" dir="ltr">01284860032</p>
+                                <p class="mb-0 text-muted contact-link-text">01284860032</p>
                             </div>
                         </a>
 
@@ -351,31 +367,31 @@
                             <div class="contact-icon">
                                 <i class="fa-solid fa-envelope animated-icon"></i>
                             </div>
-                            <div>
+                            <div class="contact-text-container">
                                 <h6 class="mb-1 fw-bold text-dark">البريد الإلكتروني</h6>
-                                <p class="mb-0 text-muted">m1ohamede9lsayed@gmail.com</p>
+                                <p class="mb-0 text-muted contact-link-text">m1ohamede9lsayed@gmail.com</p>
                             </div>
                         </a>
 
-                        <!-- فيسبوك (الرابط المطلوب) -->
+                        <!-- فيسبوك -->
                         <a href="https://www.facebook.com/share/19U634iNfW/" target="_blank" class="contact-item">
                             <div class="contact-icon">
                                 <i class="fa-brands fa-facebook-f animated-icon"></i>
                             </div>
-                            <div>
+                            <div class="contact-text-container">
                                 <h6 class="mb-1 fw-bold text-dark">فيسبوك (Facebook)</h6>
-                                <p class="mb-0 text-muted">&nbsp;https://www.facebook.com/share/19U634iNfW/</p>
+                                <p class="mb-0 text-muted contact-link-text">https://www.facebook.com/share/19U634iNfW/</p>
                             </div>
                         </a>
 
-                        <!-- لينكدإن (الرابط المطلوب) -->
+                        <!-- لينكدإن -->
                         <a href="https://www.linkedin.com/in/mohamed-elsayed-23b282400" target="_blank" class="contact-item">
                             <div class="contact-icon">
                                 <i class="fa-brands fa-linkedin-in animated-icon"></i>
                             </div>
-                            <div>
+                            <div class="contact-text-container">
                                 <h6 class="mb-1 fw-bold text-dark">LinkedIn</h6>
-                                <p class="mb-0 text-muted">&nbsp;https://www.linkedin.com/in/mohamed-elsayed-23b282400</p>
+                                <p class="mb-0 text-muted contact-link-text">https://www.linkedin.com/in/mohamed-elsayed-23b282400</p>
                             </div>
                         </a>
 
@@ -393,11 +409,11 @@
                 <div class="col-lg-8">
                     <div class="comments-section">
                         
-                        <!-- نموذج كتابة تعليق -->
+                        <!-- نموذج كتابة تعليق (يطلب الإيميل والتعليق فقط) -->
                         <form id="commentForm" class="mb-4">
                             <div class="mb-3">
-                                <label for="visitorName" class="form-label fw-bold">اسمك الكريم</label>
-                                <input type="text" class="form-control" id="visitorName" placeholder="اكتب اسمك هنا..." required>
+                                <label for="visitorEmail" class="form-label fw-bold">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="visitorEmail" placeholder="اكتب بريدك الإلكتروني هنا..." required>
                             </div>
                             <div class="mb-3">
                                 <label for="visitorComment" class="form-label fw-bold">تعليقك أو ملاحظتك</label>
@@ -410,10 +426,7 @@
 
                         <!-- قائمة التعليقات -->
                         <div id="commentsList">
-                            <div class="comment-card">
-                                <h6 class="fw-bold text-primary mb-1">أحمد محمد</h6>
-                                <p class="mb-0 text-muted small">ما شاء الله يا محمد، موقع احترافي ومرتب جداً بالتوفيق في مشروع التخرج!</p>
-                            </div>
+                            <!-- سيتم تحميل التعليقات هنا تلقائياً من التخزين المحلي -->
                         </div>
 
                     </div>
@@ -432,31 +445,74 @@
     <!-- Bootstrap 5 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- سكريبت تشغيل قسم التعليقات التفاعلي -->
+    <!-- سكريبت تشغيل قسم التعليقات التفاعلي مع الحفظ الدائم وعرض الإيميل -->
     <script>
         const commentForm = document.getElementById('commentForm');
         const commentsList = document.getElementById('commentsList');
 
+        // استرجاع التعليقات المحفوظة عند فتح الصفحة
+        document.addEventListener('DOMContentLoaded', loadComments);
+
         commentForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('visitorName').value;
+            const email = document.getElementById('visitorEmail').value;
             const commentText = document.getElementById('visitorComment').value;
 
-            if(name.trim() !== '' && commentText.trim() !== '') {
-                const newCommentHTML = `
-                    <div class="comment-card animate__animated animate__fadeIn">
-                        <h6 class="fw-bold text-primary mb-1">${escapeHTML(name)}</h6>
-                        <p class="mb-0 text-muted small">${escapeHTML(commentText)}</p>
-                    </div>
-                `;
-                
-                commentsList.insertAdjacentHTML('afterbegin', newCommentHTML);
+            if(email.trim() !== '' && commentText.trim() !== '') {
+                const commentObj = {
+                    email: email,
+                    text: commentText,
+                    date: new Date().toLocaleDateString('ar-EG')
+                };
+
+                saveCommentToStorage(commentObj);
+                renderComment(commentObj, true);
                 commentForm.reset();
             }
         });
 
-        // دالة حماية بسيطة لإدخال النص الآمن
+        function renderComment(comment, prepend = false) {
+            const commentHTML = `
+                <div class="comment-card">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="fw-bold text-primary mb-0"><i class="fa-solid fa-envelope me-1"></i> ${escapeHTML(comment.email)}</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">${comment.date || ''}</small>
+                    </div>
+                    <p class="mb-0 text-muted small mt-2">${escapeHTML(comment.text)}</p>
+                </div>
+            `;
+            if (prepend) {
+                commentsList.insertAdjacentHTML('afterbegin', commentHTML);
+            } else {
+                commentsList.insertAdjacentHTML('beforeend', commentHTML);
+            }
+        }
+
+        function saveCommentToStorage(comment) {
+            let comments = JSON.parse(localStorage.getItem('portfolio_comments')) || [];
+            comments.unshift(comment);
+            localStorage.setItem('portfolio_comments', JSON.stringify(comments));
+        }
+
+        function loadComments() {
+            let comments = JSON.parse(localStorage.getItem('portfolio_comments')) || [];
+            if (comments.length === 0) {
+                comments = [
+                    {
+                        email: "ahmed.visitor@example.com",
+                        text: "ما شاء الله يا محمد، موقع احترافي ومرتب جداً بالتوفيق في مشروع التخرج!",
+                        date: "2026/10/15"
+                    }
+                ];
+                localStorage.setItem('portfolio_comments', JSON.stringify(comments));
+            }
+            comments.forEach(comment => {
+                renderComment(comment, false);
+            });
+        }
+
+        // دالة حماية النص الآمن
         function escapeHTML(str) {
             return str.replace(/[&<>'"]/g, 
                 tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'}[tag] || tag)
